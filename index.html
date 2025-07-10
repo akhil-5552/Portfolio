@@ -20,7 +20,10 @@
         <nav class="navbar" role="navigation">
             <div class="nav-container">
                 <a href="#" class="logo">GA</a>
-                <ul class="nav-menu">
+                    <div class="nav-toggle" id="nav-toggle">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                <ul class="nav-menu ">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skill" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -30,8 +33,7 @@
         </nav>
         <header class="user-description" id="header-description">
             <div class="user-description-container">
-                <h1 class="user-name">Hi, I'm <span class="scroll-name">Gudella
-                        Akhil</span></h1>
+                <h1 class="user-name">Hi, I'm <span class="cursor" id="typing"></span></h1>
                 <div class="about-user-text">
                     <div class="about-user">
                     <p class="about-user-para">I'm a self-driven web developer and aspiring software
@@ -100,32 +102,31 @@
                     <p class="skill-subtitle">Technical Skills :</p>
                     <p class="skill-name"> HTML </p>
                     <div class="skill-bar html">
-                        <div class="skill-level html">90%</div>
+                        <div class="skill-level html" data-percent="90%">90%</div>
                     </div>
                     <p class="skill-name"> CSS </p>
                     <div class="skill-bar css">
-                        <div class="skill-level css">70%</div>
+                        <div class="skill-level css" data-percent="70%">70%</div>
                     </div>
                     <p class="skill-name"> Java </p>
                     <div class="skill-bar java">
-                        <div class="skill-level java">60%</div>
+                        <div class="skill-level java" data-percent="60%">60%</div>
                     </div>
                     <p class="skill-name"> Javascript </p>
                     <div class="skill-bar js">
-                        <div class="skill-level js">65%</div>
+                        <div class="skill-level js" data-percent="65%">65%</div>
                     </div>
                     <p class="skill-name"> Python </p>
                     <div class="skill-bar python">
-                        <div class="skill-level python">70%</div>
+                        <div class="skill-level python" data-percent="70%">70%</div>
                     </div>
                     <p class="skill-name"> DSA </p>
                     <div class="skill-bar dsa">
-                        <div class="skill-level dsa">60%</div>
+                        <div class="skill-level dsa" data-percent="60%">60%</div>
                     </div>
-                    <p class="skill-name"> Backend-Node.js, Express.js, MongoDB
-                    </p>
+                    <p class="skill-name"> Backend-Node.js, Express.js, MongoDB</p>
                     <div class="skill-bar backend">
-                        <div class="skill-level backend">50%</div>
+                        <div class="skill-level backend" data-percent="50%">50%</div>
                     </div>
                 </div>
             </section>
@@ -183,44 +184,23 @@
                             <p class="contact-details-description">Feel free to
                                 reach out—I'd love to hear from you!</p>
                             <div class="contact-div">
-                                <p class="contact-icons"><i
-                                        class="fa-solid fa-phone contact-icon"></i>+91
-                                    81436 05552</p>
-                                <p class="contact-icons"><i
-                                        class="fa-solid fa-envelope contact-icon"></i>akhilg5552@gmail.com</p>
-                                <p class="contact-icons"><i
-                                        class="fa-brands fa-linkedin contact-icon"></i>akhil-gudella-2268a9290</p>
-                                <p class="contact-icons"><i
-                                        class="fa-brands fa-github contact-icon"></i>akhil-5552</p>
+                                <p class="contact-icons"> <a href="tel:+918143605552" class="socialmedia phone-link"><i class="fa-solid fa-phone contact-icon"></i></a>+91 81436 05552</p>
+                                <p class="contact-icons"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akhilg5552@gmail.com" class="socialmedia"><i class="fa-solid fa-envelope contact-icon"></i></a>akhilg5552@gmail.com</p>
+                                <p class="contact-icons"><a href="https://www.linkedin.com/in/akhil-gudella-2268a9290/" class="socialmedia"><i class="fa-brands fa-linkedin contact-icon"></i></a>akhil-gudella-2268a9290</p>
+                                <p class="contact-icons"><a href="https://github.com/akhil-5552" class="socialmedia"><i class="fa-brands fa-github contact-icon"></i></a>akhil-5552</p>
                             </div>
                         </div>
                         <div class="contact-form">
                             <form action="#contact" class="contactForm" id="contact-form">
-                                <label for="Name" class="form-name">Name
-                                    :</label>
-                                <input type="text" id="name" name="name"
-                                    class="form-input"
-                                    placeholder="Enter your name" required>
-                                <label for="Email" class="form-name">Email
-                                    :</label>
-                                <input type="text" id="email" name="email"
-                                    class="form-input"
-                                    placeholder="Enter your email" required>
-                                <label for="Organization"
-                                    class="form-name">Organization :</label>
-                                <input type="text" id="organization"
-                                    name="organization" class="form-input"
-                                    placeholder="Enter your organization">
-                                <label for="Message" class="form-name">Message
-                                    :</label>
-                                <textarea id="message" name="message"
-                                    class="form-input"
-                                    placeholder="Describe about your project, and challenges"
-                                    required></textarea>
-                                <button type="submit" class="form-button"
-                                    id="send-message-button"><i
-                                        class="fa-solid fa-paper-plane"></i>
-                                    Send Message</button>
+                                <label for="Name" class="form-name">Name:</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                                <label for="Email" class="form-name">Email:</label>
+                                <input type="text" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                                <label for="Organization" class="form-name">Organization :</label>
+                                <input type="text" id="organization"name="organization" class="form-input" placeholder="Enter your organization" required>
+                                <label for="Message" class="form-name">Message:</label>
+                                <textarea id="message" name="message"class="form-input"placeholder="Describe about your project, and challenges" required></textarea>
+                                <button type="submit" class="form-button"id="send-message-button"><i class="fa-solid fa-paper-plane"></i>Send Message</button>
                             </form>
                         </div>
                     </div>

@@ -16,6 +16,7 @@ body {
     align-items: center;
     display: flex;
     margin: 15px 0 10px 0;
+    position: relative;
 }
 
 .logo {
@@ -27,22 +28,39 @@ body {
 }
 
 .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 90px;
-    padding-right: 50px;
-    font-size: 20px;
+  display: flex;
+  list-style: none;
+  gap: 90px;
+  padding-right: 50px;
+  font-size: 20px;
 }
 
 .nav-link {
     text-decoration: none;
     font-weight: 500;
     color: #065b73;
+    position: relative;
+    padding: 5px 0;
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
     color: #6c87e0;
     transition: color 0.6s ease;
+} */
+
+.nav-link::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 2.3px;
+    background-color: #6c87e0;
+    transition: width 0.6s ease-in-out;
+}
+
+.nav-link:hover::after{
+    width: 100%;
 }
 
 .user-description {
@@ -62,18 +80,18 @@ body {
 }
 
 .about-user {
-    padding: 0 0 0 20px;
+    padding: 0 0 0 15px;
     color: #fff;
     font-size: 17px;
     font-weight: 400;
 }
 
 .about-user ul {
-    padding: 10px 0 10px 0;
+    padding: 10px 0 10px 40px;
 }
 
 .about-user-para{
-    padding: 4px 0 0 0;
+    padding: 4px 0 0 0px;
 }
 
 .akhil-photo {
@@ -147,6 +165,7 @@ body {
 }
 
 .skill-level {
+    width: 0;
     height: 100%;
     border-radius: 10px;
     background-color: #F5C45E;
@@ -275,6 +294,11 @@ body {
     padding: 11px 0 0 11px;
 }
 
+.socialmedia{
+    text-decoration: none;
+    color: inherit;
+}
+
 .fa-phone:hover,
 .fa-envelope:hover,
 .fa-brands:hover {
@@ -345,8 +369,128 @@ body {
     font-size: 20px;
 }
 
-@keyframes akhil {
-
+body, html {
+  width: 100%;
+  overflow-x: hidden;
 }
+header, .main-content, footer {
+  padding: 0 20px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    font-size: 28px;
+    color: #471ea6;
+    background: none;
+    border: none;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+    .user-description {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        text-align: center;
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    font-size: 28px;
+    color: #471ea6;
+    background: none;
+    border: none;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .user-description {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .user-description-container {
+    width: 100%;
+  }
+
+  .about-user {
+    padding: 10px;
+  }
+
+  .akhil-photo {
+    width: 140px;
+    height: 140px;
+    margin: 10px auto;
+  }
+}
+
+
+
+// Smooth scroll for navigation links
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
 
