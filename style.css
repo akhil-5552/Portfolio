@@ -250,10 +250,14 @@ body {
     margin-bottom: 5px;
 }
 
+.contact{
+  margin: 40px 0 0 0;
+}
+    
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 10px 30px 30px 30px;
+    margin: 10px 20px 20px 20px;
     gap: 10px;
 }
 
